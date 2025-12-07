@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { classDescriptions } from '../data/classes';
+import { API_BASE_URL } from '../config/api';
 import './CharacterList.css';
 
 function CharacterList() {
@@ -15,7 +16,7 @@ function CharacterList() {
 
    const loadCharacters = async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/characters');
+      const response = await fetch(`${API_BASE_URL}/api/characters`);
       
       if (!response.ok) {
         throw new Error('获取角色列表失败');
@@ -39,7 +40,7 @@ function CharacterList() {
     }
 
     try {
-      const response = await fetch(`http://localhost:3000/api/characters/${characterId}`, {
+      const response = await fetch(`${API_BASE_URL}/api/characters/${characterId}`, {
         method: 'DELETE'
       });
 

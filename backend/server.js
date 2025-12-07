@@ -8,8 +8,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// 连接 MongoDB
-mongoose.connect('mongodb://localhost:27017/character-game');
+// 连接 MongoDB - 使用环境变量或本地默认值
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/character-game';
+mongoose.connect(MONGODB_URI);
 
 const db = mongoose.connection;
 db.on('error', (err) => console.log('❌ MongoDB连接失败:', err));
@@ -25,8 +26,8 @@ app.get('/api/test', (req, res) => {
 
 app.use('/api/characters', characterRoutes);  // ← 添加角色路由
 
-// 启动服务器
-const PORT = 3000;
+// 启动服务器 - 使用环境变量或本地默认值
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 服务器运行在 http://localhost:${PORT}`);
 });
