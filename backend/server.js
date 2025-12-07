@@ -31,6 +31,7 @@ app.use('/api/characters', characterRoutes);  // ← 添加角色路由
 
 // 启动服务器 - 使用环境变量或本地默认值
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`🚀 服务器运行在 http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 服务器运行在端口 ${PORT}`);
+  console.log(`🌐 环境变量 PORT:`, process.env.PORT || '未设置，使用默认值 3000');
 });
