@@ -10,6 +10,8 @@ app.use(express.json());
 
 // 连接 MongoDB - 使用环境变量或本地默认值
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/character-game';
+console.log('🔍 正在尝试连接 MongoDB...');
+console.log('🔍 MONGODB_URI 前20个字符:', MONGODB_URI.substring(0, 20));
 mongoose.connect(MONGODB_URI);
 
 const db = mongoose.connection;
