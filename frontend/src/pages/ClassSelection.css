@@ -1,0 +1,229 @@
+.selection-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 40px 20px;
+}
+
+.selection-content {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* 标题 */
+.selection-header {
+  text-align: center;
+  margin-bottom: 50px;
+  color: white;
+}
+
+.selection-title {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.selection-subtitle {
+  font-size: 1.3rem;
+  opacity: 0.95;
+}
+
+/* 职业网格 */
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+/* 职业卡片 */
+.class-selection-card {
+  background: white;
+  border: 3px solid;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.class-selection-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* 图片区域 */
+.class-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+}
+
+.class-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.class-selection-card:hover .class-card-image {
+  transform: scale(1.1);
+}
+
+.class-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.class-selection-card:hover .class-card-overlay {
+  opacity: 1;
+}
+
+.select-text {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* 卡片信息 */
+.class-card-info {
+  padding: 25px;
+  text-align: center;
+}
+
+.class-card-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.class-card-name {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.class-card-name-en {
+  font-size: 0.9rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.class-card-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  min-height: 60px;
+}
+
+/* 详情 */
+.class-card-details {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.detail-row:last-child {
+  margin-bottom: 0;
+}
+
+.detail-icon {
+  font-size: 1.2rem;
+}
+
+.detail-text {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* 选择按钮 */
+.select-button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.select-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 底部返回按钮 */
+.selection-footer {
+  text-align: center;
+}
+
+.btn-back-selection {
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background: white;
+  color: #667eea;
+  border: 3px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-back-selection:hover {
+  background: transparent;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .selection-title {
+    font-size: 2rem;
+  }
+
+  .classes-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .class-card-image-wrapper {
+    height: 200px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .classes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1400px) {
+  .classes-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

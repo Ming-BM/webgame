@@ -1,0 +1,314 @@
+.list-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 40px 20px;
+}
+
+.list-content {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* 加载状态 */
+.loading {
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  padding: 100px 0;
+}
+
+/* 标题栏 */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.list-title {
+  font-size: 3rem;
+  color: white;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.btn-create-new {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: white;
+  color: #667eea;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-create-new:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 空状态 */
+.empty-state {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 80px 40px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.empty-icon {
+  font-size: 6rem;
+  margin-bottom: 20px;
+}
+
+.empty-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.empty-text {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.btn-create-first {
+  padding: 20px 50px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-create-first:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(245, 87, 108, 0.4);
+}
+
+/* 角色网格 */
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+/* 角色卡片 */
+.character-card {
+  background: white;
+  border: 3px solid;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.character-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* 推荐标签 */
+.recommended-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 角色图片 */
+.character-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.character-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.character-card:hover .character-image {
+  transform: scale(1.05);
+}
+
+/* 职业标签覆盖层 */
+.character-class-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.class-icon-overlay {
+  font-size: 1.5rem;
+}
+
+/* 角色信息 */
+.character-info {
+  padding: 25px;
+}
+
+.character-name {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.character-class {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* 属性显示 */
+.attributes-display {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.attribute-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.attribute-item:last-child {
+  border-bottom: none;
+}
+
+.attr-icon {
+  font-size: 1.2rem;
+  width: 30px;
+  text-align: center;
+}
+
+.attr-label {
+  flex: 1;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.attr-value {
+  font-weight: bold;
+  color: #667eea;
+  font-size: 1.1rem;
+  min-width: 30px;
+  text-align: right;
+}
+
+/* 创建时间 */
+.character-date {
+  text-align: center;
+  color: #999;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+/* 删除按钮 */
+.btn-delete {
+  width: 100%;
+  padding: 12px;
+  background: #ff5252;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-delete:hover {
+  background: #ff1744;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 23, 68, 0.3);
+}
+
+/* 底部按钮 */
+.list-footer {
+  text-align: center;
+}
+
+.btn-back-home {
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background: white;
+  color: #667eea;
+  border: 3px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-back-home:hover {
+  background: transparent;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .list-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .list-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .characters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .character-image-wrapper {
+    height: 250px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .characters-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
