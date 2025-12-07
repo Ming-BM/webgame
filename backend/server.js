@@ -8,10 +8,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// 连接 MongoDB - 使用环境变量或本地默认值
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/character-game';
+// 连接 MongoDB - 临时硬编码用于调试
+const MONGODB_URI = 'mongodb://mongo:WRfVECrMqOasklPBBvedwUtNgZgANreW@hopper.proxy.rlwy.net:57073';
 console.log('🔍 正在尝试连接 MongoDB...');
-console.log('🔍 MONGODB_URI 前20个字符:', MONGODB_URI.substring(0, 20));
+console.log('🔍 使用硬编码的 Railway MongoDB URL');
+console.log('🔍 环境变量 MONGODB_URI:', process.env.MONGODB_URI ? '存在' : '不存在');
 mongoose.connect(MONGODB_URI);
 
 const db = mongoose.connection;
