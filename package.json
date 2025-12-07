@@ -1,0 +1,13 @@
+{
+  "name": "webgame",
+  "version": "1.0.0",
+  "description": "Character creation web game",
+  "scripts": {
+    "start": "cd backend && npm install && npm start",
+    "install-backend": "cd backend && npm install"
+  },
+  "workspaces": [
+    "backend",
+    "frontend"
+  ]
+}
