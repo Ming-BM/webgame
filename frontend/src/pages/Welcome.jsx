@@ -10,13 +10,13 @@ function Welcome() {
       {/* 左侧：内容 */}
       <div className="welcome-left">
         <div className="welcome-content">
-          <h1 className="title">⚔️ 冒险世界 ⚔️</h1>
-          <p className="subtitle">欢迎来到这个充满魔法与危险的世界</p>
+          <h1 className="title">⚔️ Adventure World ⚔️</h1>
+          <p className="subtitle">Welcome to a world full of magic and danger</p>
           
           <div className="welcome-description">
-            <p>在这里，你将成为一名勇敢的冒险者</p>
-            <p>选择你的职业，分配你的属性</p>
-            <p>开启你的传奇之旅！</p>
+            <p>Here, you will become a brave adventurer</p>
+            <p>Choose your class, allocate your attributes</p>
+            <p>Embark on your legendary journey!</p>
           </div>
 
           <div className="button-group">
@@ -24,14 +24,14 @@ function Welcome() {
               className="btn btn-primary"
               onClick={() => navigate('/quiz')}
             >
-              🎮 开始冒险
+              🎮 Start Adventure
             </button>
             
             <button 
               className="btn btn-secondary"
               onClick={() => navigate('/characters')}
             >
-              📜 我的角色
+              📜 My Characters
             </button>
           </div>
         </div>

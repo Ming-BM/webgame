@@ -5,7 +5,7 @@ import './Quiz.css';
 
 function Quiz() {
   const navigate = useNavigate();
-  const [currentQuestion, setCurrentQuestion] = useState(0);  // 当前问题索引
+  const [currentQuestion, setCurrentQuestion] = useState(0);  // 当前Question索引
   const [answers, setAnswers] = useState([]);                 // 用户的答案
   const [selectedOption, setSelectedOption] = useState(null); // 当前选择的选项
 
@@ -14,10 +14,10 @@ function Quiz() {
     setSelectedOption(optionIndex);
   };
 
-  // 下一题
+  // Next
   const handleNext = () => {
     if (selectedOption === null) {
-      alert('请选择一个选项！');
+      alert('Please select an option!');
       return;
     }
 
@@ -29,13 +29,13 @@ function Quiz() {
     if (currentQuestion === questions.length - 1) {
       calculateRecommendation(newAnswers);
     } else {
-      // 下一题
+      // Next
       setCurrentQuestion(currentQuestion + 1);
       setSelectedOption(null);
     }
   };
 
-  // 上一题
+  // Previous
   const handlePrevious = () => {
     if (currentQuestion > 0) {
       setCurrentQuestion(currentQuestion - 1);
@@ -95,11 +95,11 @@ function Quiz() {
             ></div>
           </div>
           <p className="progress-text">
-            问题 {currentQuestion + 1} / {questions.length}
+            Question {currentQuestion + 1} / {questions.length}
           </p>
         </div>
 
-        {/* 问题 */}
+        {/* Question */}
         <div className="question-section">
           <h2 className="question-text">{question.question}</h2>
         </div>
@@ -125,14 +125,14 @@ function Quiz() {
             onClick={handlePrevious}
             disabled={currentQuestion === 0}
           >
-            ← 上一题
+            ← Previous
           </button>
 
           <button 
             className="nav-button next-button"
             onClick={handleNext}
           >
-            {currentQuestion === questions.length - 1 ? '查看推荐 ✨' : '下一题 →'}
+            {currentQuestion === questions.length - 1 ? 'View Recommendation ✨' : 'Next →'}
           </button>
         </div>
       </div>

@@ -8,7 +8,7 @@ function ClassSelection() {
   // 所有职业（固定顺序）
   const allClasses = ['warrior', 'mage', 'warlock', 'priest', 'druid', 'paladin', 'rogue'];
 
-  // 选择职业
+  // Select职业
   const handleSelectClass = (classKey) => {
     navigate('/attributes', {
       state: {
@@ -22,9 +22,9 @@ function ClassSelection() {
     <div className="selection-container">
       <div className="selection-content">
         <div className="selection-header">
-          <h1 className="selection-title">选择你的职业</h1>
+          <h1 className="selection-title">Choose Your Class</h1>
           <p className="selection-subtitle">
-            选择一个职业开始你的冒险之旅
+            Select a class to begin your adventure
           </p>
         </div>
 
@@ -47,7 +47,7 @@ function ClassSelection() {
                     className="class-card-image"
                   />
                   <div className="class-card-overlay">
-                    <span className="select-text">点击选择</span>
+                    <span className="select-text">Click to Select</span>
                   </div>
                 </div>
 
@@ -81,7 +81,7 @@ function ClassSelection() {
                       handleSelectClass(classKey);
                     }}
                   >
-                    选择 {classInfo.name}
+                    Select {classInfo.name}
                   </button>
                 </div>
               </div>
@@ -89,10 +89,10 @@ function ClassSelection() {
           })}
         </div>
 
-        {/* 返回按钮 */}
+        {/* Back按钮 */}
         <div className="selection-footer">
           <button className="btn-back-selection" onClick={() => navigate(-1)}>
-            ← 返回
+            ← Back
           </button>
         </div>
       </div>

@@ -20,11 +20,11 @@ function AttributeAllocation() {
   // 状态管理
   const [characterName, setCharacterName] = useState('');
   const [attributes, setAttributes] = useState({
-    strength: 5,      // 力量
-    agility: 5,       // 敏捷
-    stamina: 5,       // 精力
-    intelligence: 5,  // 智力
-    faith: 5          // 信仰
+    strength: 5,      // Strength
+    agility: 5,       // Agility
+    stamina: 5,       // Stamina
+    intelligence: 5,  // Intelligence
+    faith: 5          // Faith
   });
 
   const TOTAL_POINTS = 30;
@@ -66,7 +66,7 @@ function AttributeAllocation() {
     });
   };
 
-  // 创建角色
+  // Create Character
   const handleCreateCharacter = async () => {
   // 验证
   if (!characterName.trim()) {
@@ -103,27 +103,27 @@ function AttributeAllocation() {
 
     if (!response.ok) {
       const error = await response.json();
-      throw new Error(error.error || '创建失败');
+      throw new Error(error.error || 'Creation failed');
     }
 
     const savedCharacter = await response.json();
     console.log('✅ 角色创建成功：', savedCharacter);
     
-    alert('角色创建成功！');
+    alert('角色Character created successfully!');
     navigate('/characters');
   } catch (error) {
-    console.error('❌ 创建角色失败：', error);
-    alert(`创建角色失败：${error.message}`);
+    console.error('❌ Create Character失败：', error);
+    alert(`Create Character失败：${error.message}`);
   }
 };
 
   // 属性名称映射
   const attributeNames = {
-    strength: { name: '力量', icon: '⚔️', description: '提高物理攻击力和近战伤害' },
-    agility: { name: '敏捷', icon: '🏃', description: '提高闪避、暴击和攻击速度' },
-    stamina: { name: '精力', icon: '💪', description: '提高生命值和防御力' },
-    intelligence: { name: '智力', icon: '📚', description: '提高法术强度和魔法值' },
-    faith: { name: '信仰', icon: '✨', description: '提高治疗效果和神圣伤害' }
+    strength: { name: 'Strength', icon: '⚔️', description: '提高物理攻击力和近战伤害' },
+    agility: { name: 'Agility', icon: '🏃', description: '提高闪避、暴击和攻击速度' },
+    stamina: { name: 'Stamina', icon: '💪', description: '提高HP and defense力' },
+    intelligence: { name: 'Intelligence', icon: '📚', description: '提高法术强度和魔法值' },
+    faith: { name: 'Faith', icon: '✨', description: '提高治疗效果和神圣伤害' }
   };
 
   return (
@@ -156,10 +156,10 @@ function AttributeAllocation() {
           </div>
         </div>
 
-        {/* 右侧：属性分配 */}
+        {/* 右侧：Attribute Allocation */}
         <div className="allocation-right">
           <div className="allocation-header">
-            <h1 className="allocation-title">创建角色</h1>
+            <h1 className="allocation-title">Create Character</h1>
             <p className="allocation-subtitle">
               {isRecommended ? '✨ 使用推荐职业' : '自选职业'}
             </p>
@@ -184,7 +184,7 @@ function AttributeAllocation() {
           {/* 点数统计 */}
           <div className="points-section">
             <div className="points-display">
-              <span className="points-label">剩余点数：</span>
+              <span className="points-label">Remaining：</span>
               <span className={`points-value ${remainingPoints === 0 ? 'complete' : ''}`}>
                 {remainingPoints} / {TOTAL_POINTS}
               </span>
@@ -196,7 +196,7 @@ function AttributeAllocation() {
             )}
           </div>
 
-          {/* 属性分配 */}
+          {/* Attribute Allocation */}
           <div className="attributes-section">
             {Object.entries(attributes).map(([attr, value]) => (
               <div key={attr} className="attribute-row">
@@ -238,7 +238,7 @@ function AttributeAllocation() {
               onClick={handleCreateCharacter}
               disabled={remainingPoints !== 0 || !characterName.trim()}
             >
-              ✅ 创建角色
+              ✅ Create Character
             </button>
           </div>
 

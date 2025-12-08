@@ -25,8 +25,8 @@ function RecommendResult() {
       <div className="result-content">
         {/* 标题 */}
         <div className="result-header">
-          <h1 className="result-title">🎉 测试完成！</h1>
-          <p className="result-subtitle">根据你的选择，我们为你推荐：</p>
+          <h1 className="result-title">🎉 Quiz Complete!</h1>
+          <p className="result-subtitle">Based on your choices, we recommend:</p>
         </div>
 
         {/* 推荐职业卡片 */}
@@ -49,18 +49,18 @@ function RecommendResult() {
 
           <div className="class-details">
             <div className="detail-item">
-              <span className="detail-label">推荐属性：</span>
+              <span className="detail-label">Recommended Attributes:</span>
               <span className="detail-value">{classInfo.recommendedAttributes}</span>
             </div>
             <div className="detail-item">
-              <span className="detail-label">游戏风格：</span>
+              <span className="detail-label">Playstyle:</span>
               <span className="detail-value">{classInfo.playstyle}</span>
             </div>
           </div>
 
           <div className="strengths-weaknesses">
             <div className="strengths">
-              <h4>✅ 优势</h4>
+              <h4>✅ Strengths</h4>
               <ul>
                 {classInfo.strengths.map((strength, index) => (
                   <li key={index}>{strength}</li>
@@ -68,7 +68,7 @@ function RecommendResult() {
               </ul>
             </div>
             <div className="weaknesses">
-              <h4>⚠️ 劣势</h4>
+              <h4>⚠️ Weaknesses</h4>
               <ul>
                 {classInfo.weaknesses.map((weakness, index) => (
                   <li key={index}>{weakness}</li>
@@ -78,9 +78,9 @@ function RecommendResult() {
           </div>
         </div>
 
-        {/* 分数排名 */}
+        {/* pts数排名 */}
         <div className="scores-section">
-          <h3 className="scores-title">📊 职业匹配度</h3>
+          <h3 className="scores-title">📊 Class Match Rating</h3>
           <div className="scores-list">
             {sortedScores.map(([cls, score], index) => (
               <div key={cls} className="score-item">
@@ -99,7 +99,7 @@ function RecommendResult() {
                     ></div>
                   </div>
                 </div>
-                <div className="score-value">{score} 分</div>
+                <div className="score-value">{score} pts</div>
               </div>
             ))}
           </div>
@@ -116,21 +116,21 @@ function RecommendResult() {
               }
             })}
           >
-            ✅ 使用推荐职业
+            ✅ Use Recommended Class
           </button>
 
           <button
             className="btn btn-secondary"
             onClick={() => navigate('/select-class', { state: { scores } })}
           >
-            🔄 自己选择职业
+            🔄 Choose Manually
           </button>
 
           <button
             className="btn btn-tertiary"
             onClick={() => navigate('/quiz')}
           >
-            🔁 重新测试
+            🔁 Retake Quiz
           </button>
         </div>
       </div>

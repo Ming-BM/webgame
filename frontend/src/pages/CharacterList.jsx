@@ -9,7 +9,7 @@ function CharacterList() {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // 加载角色列表
+  // 加载Character List
   useEffect(() => {
     loadCharacters();
   }, []);
@@ -19,23 +19,23 @@ function CharacterList() {
       const response = await fetch(`${API_BASE_URL}/api/characters`);
       
       if (!response.ok) {
-        throw new Error('获取角色列表失败');
+        throw new Error('获取Character List失败');
       }
 
       const data = await response.json();
-      console.log('✅ 加载角色列表成功：', data);
+      console.log('✅ 加载Character List成功：', data);
       setCharacters(data);
       setLoading(false);
     } catch (error) {
       console.error('❌ 加载角色失败：', error);
-      alert('加载角色列表失败，请检查后端服务是否运行');
+      alert('加载Character List失败，请检查后端服务是否运行');
       setLoading(false);
     }
   };
 
-  // 删除角色
+  // Delete Character
   const handleDelete = async (characterId) => {
-    if (!window.confirm('确定要删除这个角色吗？')) {
+    if (!window.confirm('Are you sure you want to delete this character?')) {
       return;
     }
 
@@ -48,13 +48,13 @@ function CharacterList() {
         throw new Error('删除失败');
       }
 
-      console.log('✅ 角色删除成功');
+      console.log('✅ 角色Deleted successfully');
       alert('角色已删除！');
       
-      // 重新加载角色列表
+      // 重新加载Character List
       loadCharacters();
     } catch (error) {
-      console.error('❌ 删除角色失败：', error);
+      console.error('❌ Delete Character失败：', error);
       alert('删除失败，请重试！');
     }
   };
@@ -71,7 +71,7 @@ function CharacterList() {
     });
   };
 
-  // 创建新角色
+  // Create New Character
   const handleCreateNew = () => {
     navigate('/select-class');
   };
@@ -79,7 +79,7 @@ function CharacterList() {
   if (loading) {
     return (
       <div className="list-container">
-        <div className="loading">加载中...</div>
+        <div className="loading">Loading...</div>
       </div>
     );
   }
@@ -91,11 +91,11 @@ function CharacterList() {
         <div className="list-header">
           <h1 className="list-title">我的角色</h1>
           <button className="btn-create-new" onClick={handleCreateNew}>
-            ➕ 创建新角色
+            ➕ Create New Character
           </button>
         </div>
 
-        {/* 角色列表 */}
+        {/* Character List */}
         {characters.length === 0 ? (
           <div className="empty-state">
             <div className="empty-icon">🎮</div>
@@ -119,7 +119,7 @@ function CharacterList() {
                   {/* 推荐标签 */}
                   {character.isRecommended && (
                     <div className="recommended-badge" style={{ backgroundColor: classInfo.color }}>
-                      ✨ 推荐职业
+                      ✨ Recommended
                     </div>
                   )}
 
@@ -147,32 +147,32 @@ function CharacterList() {
                     <div className="attributes-display">
                       <div className="attribute-item">
                         <span className="attr-icon">⚔️</span>
-                        <span className="attr-label">力量</span>
+                        <span className="attr-label">STR</span>
                         <span className="attr-value">{character.attributes.strength}</span>
                       </div>
                       <div className="attribute-item">
                         <span className="attr-icon">🏃</span>
-                        <span className="attr-label">敏捷</span>
+                        <span className="attr-label">AGI</span>
                         <span className="attr-value">{character.attributes.agility}</span>
                       </div>
                       <div className="attribute-item">
                         <span className="attr-icon">💪</span>
-                        <span className="attr-label">精力</span>
+                        <span className="attr-label">STA</span>
                         <span className="attr-value">{character.attributes.stamina}</span>
                       </div>
                       <div className="attribute-item">
                         <span className="attr-icon">📚</span>
-                        <span className="attr-label">智力</span>
+                        <span className="attr-label">INT</span>
                         <span className="attr-value">{character.attributes.intelligence}</span>
                       </div>
                       <div className="attribute-item">
                         <span className="attr-icon">✨</span>
-                        <span className="attr-label">信仰</span>
+                        <span className="attr-label">FAI</span>
                         <span className="attr-value">{character.attributes.faith}</span>
                       </div>
                     </div>
 
-                    {/* 创建时间 */}
+                    {/* Created */}
                     <div className="character-date">
                       🕒 {formatDate(character.createdAt)}
                     </div>
@@ -182,7 +182,7 @@ function CharacterList() {
                       className="btn-delete"
                       onClick={() => handleDelete(character._id)}
                     >
-                      🗑️ 删除角色
+                      🗑️ Delete Character
                     </button>
                   </div>
                 </div>

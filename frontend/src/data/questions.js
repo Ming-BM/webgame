@@ -1,17 +1,17 @@
 export const questions = [
   {
     id: 1,
-    question: "请选择你的作战风格，你更倾向于正面用力量对抗敌人，还是用灵活的技巧玩弄敌人？",
+    question: "Choose your combat style. Do you prefer facing enemies head-on with strength, or using agile tactics to outmaneuver them?",
     options: [
       { 
-        text: "正面对抗", 
+        text: "Direct confrontation", 
         points: { 
           warrior: 4, paladin: 3, druid: 2, 
           mage: 0, warlock: 0, priest: 0, rogue: 0 
         } 
       },
       { 
-        text: "使用技巧", 
+        text: "Use tactics", 
         points: { 
           rogue: 4, mage: 3, warlock: 3, priest: 1, 
           warrior: 0, paladin: 0, druid: 0 
@@ -21,17 +21,17 @@ export const questions = [
   },
   {
     id: 2,
-    question: "你喜欢单独作战（自己的实力才是最重要的），还是团队活动（团结力量大！）？",
+    question: "Do you prefer solo combat (individual strength is paramount) or team activities (unity is strength!)?",
     options: [
       { 
-        text: "独自作战", 
+        text: "Solo combat", 
         points: { 
           rogue: 4, warlock: 3, mage: 2, warrior: 1, 
           paladin: 0, priest: 0, druid: 0 
         } 
       },
       { 
-        text: "团队活动", 
+        text: "Team activities", 
         points: { 
           priest: 4, paladin: 3, druid: 3, warrior: 2, mage: 1, 
           warlock: 0, rogue: 0 
@@ -41,31 +41,31 @@ export const questions = [
   },
   {
     id: 3,
-    question: "在战斗中，你更喜欢站在什么位置？",
+    question: "In battle, where do you prefer to position yourself?",
     options: [
       { 
-        text: "前排冲锋，吸引火力", 
+        text: "Frontline, drawing enemy fire", 
         points: { 
           warrior: 4, paladin: 3, druid: 1, 
           mage: 0, warlock: 0, priest: 0, rogue: 0 
         } 
       },
       { 
-        text: "中排支援，控场输出", 
+        text: "Mid-range, controlling the battlefield", 
         points: { 
           mage: 4, warlock: 3, druid: 2, priest: 2, 
           warrior: 0, paladin: 0, rogue: 0 
         } 
       },
       { 
-        text: "后排治疗，保护队友", 
+        text: "Back-line, healing and protecting allies", 
         points: { 
           priest: 4, druid: 3, paladin: 1, 
           warrior: 0, mage: 0, warlock: 0, rogue: 0 
         } 
       },
       { 
-        text: "隐身游走，寻找机会", 
+        text: "Stealth, looking for opportunities", 
         points: { 
           rogue: 4, warlock: 1, 
           warrior: 0, mage: 0, priest: 0, paladin: 0, druid: 0 
@@ -75,31 +75,31 @@ export const questions = [
   },
   {
     id: 4,
-    question: "你更喜欢用什么方式解决问题？",
+    question: "How do you prefer to solve problems?",
     options: [
       { 
-        text: "用武器直接解决", 
+        text: "With weapons directly", 
         points: { 
           warrior: 4, rogue: 3, paladin: 2, druid: 1, 
           mage: 0, warlock: 0, priest: 0 
         } 
       },
       { 
-        text: "用魔法和智慧", 
+        text: "With magic and wisdom", 
         points: { 
           mage: 4, warlock: 3, priest: 2, druid: 2, 
           warrior: 0, paladin: 0, rogue: 0 
         } 
       },
       { 
-        text: "用信仰和神圣之力", 
+        text: "With faith and holy power", 
         points: { 
           priest: 4, paladin: 4, druid: 1, 
           warrior: 0, mage: 0, warlock: 0, rogue: 0 
         } 
       },
       { 
-        text: "用计谋和暗算", 
+        text: "With strategy and deception", 
         points: { 
           rogue: 4, warlock: 2, mage: 1, 
           warrior: 0, paladin: 0, priest: 0, druid: 0 
@@ -109,38 +109,38 @@ export const questions = [
   },
   {
     id: 5,
-    question: "你的力量来源是什么？",
+    question: "What is the source of your power?",
     options: [
       { 
-        text: "强健的体魄和战斗技巧", 
+        text: "Strong physique and combat skills", 
         points: { 
           warrior: 4, rogue: 2, paladin: 2, druid: 1, 
           mage: 0, warlock: 0, priest: 0 
         } 
       },
       { 
-        text: "对魔法奥秘的研究", 
+        text: "Studying arcane mysteries", 
         points: { 
           mage: 4, warlock: 3, priest: 1, druid: 1, 
           warrior: 0, paladin: 0, rogue: 0 
         } 
       },
       { 
-        text: "与恶魔或黑暗力量的契约", 
+        text: "Pacts with demons or dark forces", 
         points: { 
           warlock: 4, rogue: 1, 
           mage: 0, warrior: 0, paladin: 0, priest: 0, druid: 0 
         } 
       },
       { 
-        text: "对神明的虔诚信仰", 
+        text: "Devout faith in the divine", 
         points: { 
           priest: 4, paladin: 4, druid: 1, 
           warrior: 0, mage: 0, warlock: 0, rogue: 0 
         } 
       },
       { 
-        text: "与自然的和谐共生", 
+        text: "Harmony with nature", 
         points: { 
           druid: 4, priest: 1, paladin: 1, 
           warrior: 0, mage: 0, warlock: 0, rogue: 0 
@@ -150,31 +150,31 @@ export const questions = [
   },
   {
     id: 6,
-    question: "面对一个强大的敌人，你的第一反应是？",
+    question: "Facing a powerful enemy, what's your first instinct?",
     options: [
       { 
-        text: "举起武器冲上去", 
+        text: "Charge forward with weapon raised", 
         points: { 
           warrior: 4, paladin: 2, rogue: 1, 
           mage: 0, warlock: 0, priest: 0, druid: 0 
         } 
       },
       { 
-        text: "先观察弱点，再施展法术", 
+        text: "Observe weaknesses first, then cast spells", 
         points: { 
           mage: 4, warlock: 3, druid: 2, priest: 1, rogue: 1, 
           warrior: 0, paladin: 0 
         } 
       },
       { 
-        text: "祈祷神明，给予队友祝福", 
+        text: "Pray to the divine, buff allies", 
         points: { 
           priest: 4, paladin: 3, druid: 1, 
           warrior: 0, mage: 0, warlock: 0, rogue: 0 
         } 
       },
       { 
-        text: "躲在暗处，寻找致命一击", 
+        text: "Hide in shadows, seek a fatal strike", 
         points: { 
           rogue: 4, warlock: 1, 
           warrior: 0, mage: 0, priest: 0, paladin: 0, druid: 0 
@@ -184,38 +184,38 @@ export const questions = [
   },
   {
     id: 7,
-    question: "在冒险中，你更看重什么？",
+    question: "In your adventures, what do you value most?",
     options: [
       { 
-        text: "荣誉和正义", 
+        text: "Honor and justice", 
         points: { 
           paladin: 4, warrior: 3, priest: 2, druid: 1, 
           mage: 0, warlock: 0, rogue: 0 
         } 
       },
       { 
-        text: "知识和真理", 
+        text: "Knowledge and truth", 
         points: { 
           mage: 4, priest: 2, warlock: 2, druid: 1, 
           warrior: 0, paladin: 0, rogue: 0 
         } 
       },
       { 
-        text: "力量和财富", 
+        text: "Power and wealth", 
         points: { 
           warrior: 3, warlock: 3, rogue: 3, 
           mage: 0, priest: 0, paladin: 0, druid: 0 
         } 
       },
       { 
-        text: "生命和自然的平衡", 
+        text: "Life and balance of nature", 
         points: { 
           druid: 4, priest: 2, paladin: 1, 
           warrior: 0, mage: 0, warlock: 0, rogue: 0 
         } 
       },
       { 
-        text: "自由和刺激", 
+        text: "Freedom and excitement", 
         points: { 
           rogue: 4, warlock: 2, warrior: 1, 
           mage: 0, priest: 0, paladin: 0, druid: 0 
@@ -225,31 +225,31 @@ export const questions = [
   },
   {
     id: 8,
-    question: "你希望在团队中扮演什么角色？",
+    question: "What role do you want to play in your team?",
     options: [
       { 
-        text: "主坦克，保护所有人", 
+        text: "Main tank, protecting everyone", 
         points: { 
           warrior: 4, paladin: 4, druid: 1, 
           mage: 0, warlock: 0, priest: 0, rogue: 0 
         } 
       },
       { 
-        text: "主力输出，快速击杀敌人", 
+        text: "Main DPS, quickly eliminating enemies", 
         points: { 
           mage: 4, warlock: 3, rogue: 3, warrior: 2, druid: 1, 
           paladin: 0, priest: 0 
         } 
       },
       { 
-        text: "治疗者，保证团队续航", 
+        text: "Healer, ensuring team survival", 
         points: { 
           priest: 4, druid: 3, paladin: 2, 
           warrior: 0, mage: 0, warlock: 0, rogue: 0 
         } 
       },
       { 
-        text: "辅助控制，削弱敌人", 
+        text: "Support control, weakening enemies", 
         points: { 
           mage: 3, warlock: 3, druid: 2, priest: 1, 
           warrior: 0, paladin: 0, rogue: 0 
@@ -259,38 +259,38 @@ export const questions = [
   },
   {
     id: 9,
-    question: "你对魔法和超自然力量的态度是？",
+    question: "What's your attitude toward magic and supernatural forces?",
     options: [
       { 
-        text: "魔法是危险的，我更信任武器", 
+        text: "Magic is dangerous, I trust my weapon", 
         points: { 
           warrior: 4, rogue: 2, paladin: 1, 
           mage: 0, warlock: 0, priest: 0, druid: 0 
         } 
       },
       { 
-        text: "魔法是工具，需要深入研究", 
+        text: "Magic is a tool that needs deep study", 
         points: { 
           mage: 4, warlock: 3, druid: 1, 
           warrior: 0, paladin: 0, priest: 0, rogue: 0 
         } 
       },
       { 
-        text: "只有神圣之力才是正道", 
+        text: "Only holy power is the true path", 
         points: { 
           priest: 4, paladin: 4, druid: 1, 
           warrior: 0, mage: 0, warlock: 0, rogue: 0 
         } 
       },
       { 
-        text: "为了力量，我愿意使用任何手段", 
+        text: "For power, I'll use any means necessary", 
         points: { 
           warlock: 4, rogue: 2, warrior: 1, 
           mage: 0, priest: 0, paladin: 0, druid: 0 
         } 
       },
       { 
-        text: "自然之力才是最强大的魔法", 
+        text: "Nature's power is the strongest magic", 
         points: { 
           druid: 4, priest: 1, mage: 1, 
           warrior: 0, warlock: 0, paladin: 0, rogue: 0 
@@ -300,23 +300,23 @@ export const questions = [
   },
   {
     id: 10,
-    question: "如果必须在道德和胜利之间选择，你会？",
+    question: "If you must choose between morality and victory, you would?",
     options: [
       { 
-        text: "坚守道德底线，即使失败", 
+        text: "Hold moral ground, even if defeated", 
         points: { 
           paladin: 4, priest: 3, druid: 2, warrior: 1, 
           mage: 0, warlock: 0, rogue: 0 
         } 
       },
       { 
-        text: "视情况而定，寻找平衡", 
+        text: "Depends on the situation, seek balance", 
         points: { 
           warrior: 3, mage: 3, druid: 3, priest: 1, paladin: 1, warlock: 1, rogue: 1 
         } 
       },
       { 
-        text: "胜利优先，手段不重要", 
+        text: "Victory first, means don't matter", 
         points: { 
           warlock: 4, rogue: 4, warrior: 1, 
           mage: 0, priest: 0, paladin: 0, druid: 0 
