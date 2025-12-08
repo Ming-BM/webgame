@@ -5,47 +5,54 @@ import './Quiz.css';
 
 function Quiz() {
   const navigate = useNavigate();
-  const [currentQuestion, setCurrentQuestion] = useState(0);  // 当前Question索引
-  const [answers, setAnswers] = useState([]);                 // 用户的答案
-  const [selectedOption, setSelectedOption] = useState(null); // 当前选择的选项
+  const [currentQuestion, setCurrentQuestion] = useState(0);  // Current question index
+  const [answers, setAnswers] = useState([]);                 // User's answers
+  const [selectedOption, setSelectedOption] = useState(null); // Currently selected option
 
-  // 处理选择选项
+  // Handle option selection
   const handleSelectOption = (optionIndex) => {
     setSelectedOption(optionIndex);
   };
 
-  // Next
+  // Go to next question
   const handleNext = () => {
     if (selectedOption === null) {
       alert('Please select an option!');
       return;
     }
 
-    // 保存答案
+    // Save answer
     const newAnswers = [...answers, selectedOption];
     setAnswers(newAnswers);
 
-    // 如果是最后一题，计算推荐职业
+    // If last question, calculate recommendation
     if (currentQuestion === questions.length - 1) {
       calculateRecommendation(newAnswers);
     } else {
-      // Next
+      // Go to next question
       setCurrentQuestion(currentQuestion + 1);
       setSelectedOption(null);
     }
   };
 
-  // Previous
+  // Go to previous question
   const handlePrevious = () => {
     if (currentQuestion > 0) {
       setCurrentQuestion(currentQuestion - 1);
       setSelectedOption(answers[currentQuestion - 1]);
-      // 移除最后一个答案
+      // Remove last answer
       setAnswers(answers.slice(0, -1));
     }
   };
 
-  // 计算推荐职业
+  // Return to home page
+  const handleReturnHome = () => {
+    if (window.confirm('Are you sure you want to exit the quiz? Your progress will be lost.')) {
+      navigate('/');
+    }
+  };
+
+  // Calculate class recommendation
   const calculateRecommendation = (finalAnswers) => {
     const scores = {
       warrior: 0,
@@ -86,7 +93,16 @@ function Quiz() {
   return (
     <div className="quiz-container">
       <div className="quiz-content">
-        {/* 进度条 */}
+        {/* Home button */}
+        <button
+          className="btn-home-quiz"
+          onClick={handleReturnHome}
+          title="Return to Home"
+        >
+          🏠 Home
+        </button>
+
+        {/* Progress bar */}
         <div className="progress-section">
           <div className="progress-bar">
             <div 
@@ -104,7 +120,7 @@ function Quiz() {
           <h2 className="question-text">{question.question}</h2>
         </div>
 
-        {/* 选项 */}
+        {/* Options */}
         <div className="options-section">
           {question.options.map((option, index) => (
             <button
@@ -118,7 +134,7 @@ function Quiz() {
           ))}
         </div>
 
-        {/* 按钮 */}
+        {/* Navigation buttons */}
         <div className="button-section">
           <button 
             className="nav-button prev-button"

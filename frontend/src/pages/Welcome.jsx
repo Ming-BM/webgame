@@ -7,7 +7,7 @@ function Welcome() {
 
   return (
     <div className="welcome-container">
-      {/* 左侧：内容 */}
+      {/* Left: Content */}
       <div className="welcome-left">
         <div className="welcome-content">
           <h1 className="title">⚔️ Adventure World ⚔️</h1>

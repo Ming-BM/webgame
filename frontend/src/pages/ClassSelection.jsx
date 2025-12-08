@@ -5,10 +5,10 @@ import './ClassSelection.css';
 function ClassSelection() {
   const navigate = useNavigate();
 
-  // 所有职业（固定顺序）
+  // All classes (fixed order)
   const allClasses = ['warrior', 'mage', 'warlock', 'priest', 'druid', 'paladin', 'rogue'];
 
-  // Select职业
+  // Select class
   const handleSelectClass = (classKey) => {
     navigate('/attributes', {
       state: {
@@ -39,7 +39,7 @@ function ClassSelection() {
                 style={{ borderColor: classInfo.color }}
                 onClick={() => handleSelectClass(classKey)}
               >
-                {/* 职业图片 */}
+                {/* Class image */}
                 <div className="class-card-image-wrapper">
                   <img
                     src={classInfo.image}
@@ -51,7 +51,7 @@ function ClassSelection() {
                   </div>
                 </div>
 
-                {/* 职业信息 */}
+                {/* Class info */}
                 <div className="class-card-info">
                   <div className="class-card-icon" style={{ color: classInfo.color }}>
                     {classInfo.icon}
@@ -89,7 +89,7 @@ function ClassSelection() {
           })}
         </div>
 
-        {/* Back按钮 */}
+        {/* Back button */}
         <div className="selection-footer">
           <button className="btn-back-selection" onClick={() => navigate(-1)}>
             ← Back

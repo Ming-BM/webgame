@@ -23,15 +23,15 @@ function RecommendResult() {
   return (
     <div className="result-container">
       <div className="result-content">
-        {/* 标题 */}
+        {/* Title */}
         <div className="result-header">
           <h1 className="result-title">🎉 Quiz Complete!</h1>
           <p className="result-subtitle">Based on your choices, we recommend:</p>
         </div>
 
-        {/* 推荐职业卡片 */}
+        {/* Recommended class card */}
         <div className="class-card recommended" style={{ borderColor: classInfo.color }}>
-          {/* 职业图片 */}
+          {/* Class image */}
           {classInfo.image && (
             <div className="class-image-container">
               <img src={classInfo.image} alt={classInfo.name} className="class-image" />
@@ -78,7 +78,7 @@ function RecommendResult() {
           </div>
         </div>
 
-        {/* pts数排名 */}
+        {/* Points ranking */}
         <div className="scores-section">
           <h3 className="scores-title">📊 Class Match Rating</h3>
           <div className="scores-list">
@@ -105,7 +105,7 @@ function RecommendResult() {
           </div>
         </div>
 
-        {/* 按钮 */}
+        {/* Buttons */}
         <div className="result-buttons">
           <button
             className="btn btn-primary"

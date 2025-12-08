@@ -31,11 +31,11 @@ function AttributeAllocation() {
   const MIN_ATTRIBUTE = 0;
   const MAX_ATTRIBUTE = 20;
 
-  // 计算已使用的点数
+  // Calculate used points
   const usedPoints = Object.values(attributes).reduce((sum, val) => sum + val, 0);
   const remainingPoints = TOTAL_POINTS - usedPoints;
 
-  // 增加属性点
+  // Increase attribute
   const increaseAttribute = (attr) => {
     if (remainingPoints > 0 && attributes[attr] < MAX_ATTRIBUTE) {
       setAttributes({
@@ -45,7 +45,7 @@ function AttributeAllocation() {
     }
   };
 
-  // 减少属性点
+  // Decrease attribute
   const decreaseAttribute = (attr) => {
     if (attributes[attr] > MIN_ATTRIBUTE) {
       setAttributes({
@@ -55,7 +55,7 @@ function AttributeAllocation() {
     }
   };
 
-  // 重置属性
+  // Reset attributes
   const resetAttributes = () => {
     setAttributes({
       strength: 5,
@@ -68,18 +68,18 @@ function AttributeAllocation() {
 
   // Create Character
   const handleCreateCharacter = async () => {
-  // 验证
+  // Validation
   if (!characterName.trim()) {
-    alert('请输入角色名字！');
+    alert('Please enter character name!');
     return;
   }
 
   if (remainingPoints !== 0) {
-    alert(`请分配完所有点数！还剩 ${remainingPoints} 点未分配。`);
+    alert(`You must allocate all points! Remaining: ${remainingPoints} points unallocated.`);
     return;
   }
 
-  // 准备角色数据
+  // Prepare character data
   const characterData = {
     name: characterName,
     class: selectedClass,
@@ -94,7 +94,7 @@ function AttributeAllocation() {
   };
 
   try {
-    // 发送到后端保存
+    // Send to backend to save
     const response = await fetch(`${API_BASE_URL}/api/characters`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -156,7 +156,7 @@ function AttributeAllocation() {
           </div>
         </div>
 
-        {/* 右侧：Attribute Allocation */}
+        {/* Right: Attribute Allocation */}
         <div className="allocation-right">
           <div className="allocation-header">
             <h1 className="allocation-title">Create Character</h1>
